@@ -1,6 +1,7 @@
 # Orenono
 
 [![Build Status](https://travis-ci.org/tbpgr/orenono.png?branch=master)](https://travis-ci.org/tbpgr/orenono)
+[![Coverage Status](https://coveralls.io/repos/tbpgr/orenono/badge.png)](https://coveralls.io/r/tbpgr/orenono)
 
 Brainfuck interpreter written in Ruby.
 
