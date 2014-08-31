@@ -1,0 +1,10 @@
+# encoding: utf-8
+
+increment ":heavy_plus_sign:"
+decrement ":heavy_minus_sign:"
+start_loop ":baby:"
+end_loop ":older_man:"
+next_cursol ":arrow_right:"
+previous_cursol ":arrow_left:"
+display ":blossom:"
+read ":seedling:"
