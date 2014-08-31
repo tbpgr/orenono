@@ -1,5 +1,7 @@
 # Orenono
 
+[![Build Status](https://travis-ci.org/tbpgr/orenono.png?branch=master)](https://travis-ci.org/tbpgr/orenono)
+
 Brainfuck interpreter written in Ruby.
 
 You can change basic syntaxes by Orenonofile.
