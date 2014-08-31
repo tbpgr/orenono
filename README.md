@@ -1,5 +1,6 @@
 # Orenono
 
+[![Gem Version](https://badge.fury.io/rb/orenono.svg)](http://badge.fury.io/rb/orenono)
 [![Build Status](https://travis-ci.org/tbpgr/orenono.png?branch=master)](https://travis-ci.org/tbpgr/orenono)
 [![Coverage Status](https://coveralls.io/repos/tbpgr/orenono/badge.png)](https://coveralls.io/r/tbpgr/orenono)
 
