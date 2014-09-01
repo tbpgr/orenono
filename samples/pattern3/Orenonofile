@@ -1,0 +1,10 @@
+# encoding: utf-8
+
+increment "1時間残業追加"
+decrement "1時間サービス残業"
+start_loop "勤務開始"
+end_loop "勤務終了"
+next_cursol "次のタスク"
+previous_cursol "前のタスク"
+display "納品"
+read "要件追加"
