@@ -1,0 +1,10 @@
+# encoding: utf-8
+
+increment "新問題公開"
+decrement "受付終了"
+start_loop "ゴルフ問題開始"
+end_loop "ゴルフ問題終了"
+next_cursol "次の問題を解く"
+previous_cursol "前の問題を解く"
+display "提出する"
+read "問題文をダウンロードする"
