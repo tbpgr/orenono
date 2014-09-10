@@ -11,6 +11,12 @@ module Orenono
     class_option :help, type: :boolean, aliases: '-h', desc: 'help message.'
     class_option :version, type: :boolean, desc: 'version'
 
+    desc 'init', 'Generate Orenonofile template'
+    def init
+      Orenono::Core.new.init
+      exit(0)
+    end
+
     desc 'execute', 'Execute Brainf**k'
     def execute(file)
       exit(1) unless file
@@ -18,9 +24,10 @@ module Orenono
       exit(0)
     end
 
-    desc 'init', 'Generate Orenonofile template'
-    def init
-      Orenono::Core.new.init
+    desc 'convert', 'EConvert Brainf*ck default syntax to your Orenonofile syntax'
+    def convert(file)
+      exit(1) unless file
+      puts Orenono::Core.new.bf_to_your_syntax(file)
       exit(0)
     end
 

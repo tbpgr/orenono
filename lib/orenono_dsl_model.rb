@@ -21,6 +21,17 @@ module Orenono
     # read command
     attr_accessor :read
 
+    def syntaxes
+      [
+        @increment, @decrement, @start_loop, @end_loop,
+        @next_cursol, @previous_cursol, @display, @read
+      ]
+    end
+
+    def default_syntaxes
+      %w(+ - [ ] > < . ,)
+    end
+
     def token_patterns
       instance_variables.map do |key|
         sap_key = instance_variable_get(key)

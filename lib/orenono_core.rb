@@ -49,18 +49,38 @@ read ","
 
     # Execute brain f**k
     def execute(file)
-      src = read_dsl
-      dsl = Orenono::Dsl.new
-      dsl.instance_eval src if File.exist?(ORENONO_FILE)
-      code = File.open(file, 'r:utf-8') { |f|f.read }
+      dsl = read_dsl
+      code = read_code(file)
       ob = Orenono::Brain.new(dsl.orenono, code)
       ob.run
     end
 
+    # Convert Brainf*ck default syntax to your Orenonofile syntax
+    def bf_to_your_syntax(file)
+      dsl = read_dsl
+      code = read_code(file)
+      config = dsl.orenono
+      convert(config, code, config.default_syntaxes, config.syntaxes)
+    end
+
     private
 
+    def convert(config, src, from_syntaxes, to_syntaxes)
+      from_syntaxes.each_with_index do |syntax, i|
+        src = src.gsub(syntax, to_syntaxes[i])
+      end
+      src
+    end
+
+    def read_code(file)
+      File.open(file, 'r:utf-8') { |f|f.read }
+    end
+
     def read_dsl
-      File.open(ORENONO_FILE) { |f|f.read } if File.exist?(ORENONO_FILE)
+      src = File.open(ORENONO_FILE) { |f|f.read } if File.exist?(ORENONO_FILE)
+      dsl = Orenono::Dsl.new
+      dsl.instance_eval src if File.exist?(ORENONO_FILE)
+      dsl
     end
   end
 end

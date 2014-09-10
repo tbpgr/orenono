@@ -106,6 +106,46 @@ $ orenono e sample.bf
 Hello, world!
 ~~~
 
+### Convert Brainf*ck default syntax to your Orenonofile syntax
+
+* Orenonofile
+
+~~~ruby
+# encoding: utf-8
+
+increment "足す"
+decrement "引く"
+start_loop "はじめ"
+end_loop "おわり"
+next_cursol "次"
+previous_cursol "前"
+display "出"
+read "入"
+~~~
+
+* Target Brainf_ck code.
+
+~~~brainfuck
++++++++++[>++++++++>+++++++++++>+++++<<<-]>.>++.+++++++..+++.>-.
+------------.<++++++++.--------.+++.------.--------.>+.
+~~~
+
+* Convert
+
+~~~bash
+$ orenono c base.bf
+足す足す足す足す足す足す足す足す足すはじめ次足す足す足す足す足す足す足す足す次足す足す足す足す足す足す足す足す足す足す足す次足す足す足す足す足す前前前引くおわり次出次足す足す出足す足す足す足す足す足す足す出出足す足す足す出次引く出
+引く引く引く引く引く引く引く引く引く引く引く引く出前足す足す足す足す足す足す足す足す出引く引く引く引く引く引く引く引く出足す足す足す出引く引く引く引く引く引く出引く引く引く引く引く引く引く引く出次足す出
+~~~
+
+* Use converted file
+
+~~~bash
+$ orenono c base.bf > sample.bf
+$ orenono e sample.bf
+Hello, world!$
+~~~
+
 ## Brainfuck Derivation Language Samples
 
 ### Sample Define1
@@ -173,7 +213,8 @@ Hello, world!
 ~~~
 
 ## History
-* version 0.0.1 : first release.
+* version 0.0.2 : Add converter(Brainf*ck default syntax to your Orenonofile syntax).
+* version 0.0.1 : First release.
 
 ## Contributing
 
