@@ -30,19 +30,30 @@ Or install it yourself as:
 ### Show help
 
 ~~~bash
-orenono h
+$ orenono h
+Commands:
+  orenono convert         # Convert Brainf*ck default syntax to your Orenono...
+  orenono execute         # Execute Brainf**k
+  orenono help [COMMAND]  # Describe available commands or one specific command
+  orenono init            # Generate Orenonofile template
+  orenono version         # version
+
+Options:
+  -h, [--help]     # help message.
+      [--version]  # version
+
 ~~~
 
 ### Generate Orenonofile
 
 ~~~bash
-orenono init
+$ orenono init
 ~~~
 
 or 
 
 ~~~bash
-orenono i
+$ orenono i
 ~~~
 
 Orenonofile contents is...  
