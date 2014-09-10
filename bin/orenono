@@ -24,7 +24,7 @@ module Orenono
       exit(0)
     end
 
-    desc 'convert', 'EConvert Brainf*ck default syntax to your Orenonofile syntax'
+    desc 'convert', 'Convert Brainf*ck default syntax to your Orenonofile syntax'
     def convert(file)
       exit(1) unless file
       puts Orenono::Core.new.bf_to_your_syntax(file)
