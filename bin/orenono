@@ -5,6 +5,7 @@ require 'orenono_core'
 require 'orenono/version'
 require 'thor'
 
+# rubocop:disable LineLength
 module Orenono
   # = Orenono CLI
   class CLI < Thor
@@ -31,6 +32,13 @@ module Orenono
       exit(0)
     end
 
+    desc 'generate', 'Generate Brainf*ck code from ascii code text.'
+    def generate(ascii_text)
+      exit(1) unless ascii_text
+      puts Orenono::Core.new.generate_code_from_ascii_text(ascii_text)
+      exit(0)
+    end
+
     desc 'version', 'version'
     def version
       p Orenono::VERSION
@@ -39,3 +47,4 @@ module Orenono
 end
 
 Orenono::CLI.start(ARGV)
+# rubocop:enable LineLength

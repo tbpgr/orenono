@@ -1,6 +1,7 @@
 # encoding: utf-8
 require 'brain'
 require 'orenono_dsl'
+require 'generator'
 
 module Orenono
   # Orenono Core
@@ -60,12 +61,19 @@ read ","
       dsl = read_dsl
       code = read_code(file)
       config = dsl.orenono
-      convert(config, code, config.default_syntaxes, config.syntaxes)
+      convert(code, config.default_syntaxes, config.syntaxes)
+    end
+
+    # Generate Brainf*ck code from ascii code text.
+    # If you create original syntax in Orenonofile, output syntax is your syntax.
+    def generate_code_from_ascii_text(ascii_text)
+      config = read_dsl.orenono
+      Generator.generate(ascii_text, config)
     end
 
     private
 
-    def convert(config, src, from_syntaxes, to_syntaxes)
+    def convert(src, from_syntaxes, to_syntaxes)
       from_syntaxes.each_with_index do |syntax, i|
         src = src.gsub(syntax, to_syntaxes[i])
       end

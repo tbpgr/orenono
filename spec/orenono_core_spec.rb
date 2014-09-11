@@ -1,14 +1,15 @@
 # encoding: utf-8
-require "spec_helper"
-require "orenono_core"
-require "orenono_dsl_model"
+require 'spec_helper'
+require 'orenono_core'
+require 'orenono_dsl_model'
 
+# rubocop:disable Tab, UnusedMethodArgument, LineLength
 describe Orenono::Core do
   context :convert do
     cases = [
       {
         case_no: 1,
-        case_title: "valid case",
+        case_title: 'valid case',
         config: Orenono::DslModel.new.tap do |e|
           e.increment = 'add'
           e.decrement = 'diff'
@@ -22,7 +23,7 @@ describe Orenono::Core do
         src: '++--[[]]>><<..,,',
         bf_to_your: true,
         expected: 'addadddiffdiffstartstartendendnextnextpreviouspreviousdisplaydisplayreadread'
-      },
+      }
     ]
 
     cases.each do |c|
@@ -34,7 +35,7 @@ describe Orenono::Core do
           orenono_core = Orenono::Core.new
 
           # -- when --
-          actual = orenono_core.send(:convert, c[:config], c[:src], c[:config].default_syntaxes, c[:config].syntaxes)
+          actual = orenono_core.send(:convert, c[:src], c[:config].default_syntaxes, c[:config].syntaxes)
 
           # -- then --
           expect(actual).to eq(c[:expected])
@@ -53,3 +54,4 @@ describe Orenono::Core do
     end
   end
 end
+# rubocop:enable Tab, UnusedMethodArgument, LineLength
