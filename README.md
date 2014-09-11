@@ -32,8 +32,9 @@ Or install it yourself as:
 ~~~bash
 $ orenono h
 Commands:
-  orenono convert         # Convert Brainf*ck default syntax to your Orenono...
+  orenono convert         # Convert Brainf*ck default syntax to your Orenonof...
   orenono execute         # Execute Brainf**k
+  orenono generate        # Generate Brainf*ck code from ascii code text.
   orenono help [COMMAND]  # Describe available commands or one specific command
   orenono init            # Generate Orenonofile template
   orenono version         # version
@@ -41,7 +42,6 @@ Commands:
 Options:
   -h, [--help]     # help message.
       [--version]  # version
-
 ~~~
 
 ### Generate Orenonofile
