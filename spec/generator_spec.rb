@@ -37,6 +37,22 @@ describe Orenono::Generator do
         end,
         text: 'Hello, world!',
         expected: 'addaddaddaddaddaddaddaddaddaddstartnextaddaddaddaddaddaddaddpreviousdiffendnextaddadddisplayaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddadddisplayaddaddaddaddaddaddadddisplaydisplayaddaddadddisplaydiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdisplaydiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdisplayaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddaddadddisplaydiffdiffdiffdiffdiffdiffdiffdiffdisplayaddaddadddisplaydiffdiffdiffdiffdiffdiffdisplaydiffdiffdiffdiffdiffdiffdiffdiffdisplaydiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdiffdisplay'
+      },
+      {
+        case_no: 3,
+        case_title: 'multibyte case',
+        config: Orenono::DslModel.new.tap do |e|
+          e.increment = '+'
+          e.decrement = '-'
+          e.start_loop = '['
+          e.end_loop = ']'
+          e.next_cursol = '>'
+          e.previous_cursol = '<'
+          e.display = '.'
+          e.read = ','
+        end,
+        text: 'こんにちわ世界',
+        expected: '++++++++++[>++++++++++++++++++++++<-]>+++++++.--------------------------------------------------------------------------------------------------.++++++++++++++++++.++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.-------------------------------------------------------------------------------------------------.+++++++++++++++++.++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.--------------------------------------------------------------------------------------------------.++++++++++++++++++++++++++++++++++++++++++.++++++++++++++++++++++++++++++++++++++++++++++++++++++++.--------------------------------------------------------------------------------------------------.++++++++++++++++++++++++++++++++.++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.-------------------------------------------------------------------------------------------------.+++++++++++++.+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.--------------------------------------------.----------------------------------.+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.----------------------------------------------------------------------------------.---------.'
       }
     ]
 
