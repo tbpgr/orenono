@@ -9,15 +9,16 @@ module Orenono
     attr_reader :tables, :init_codes, :pointer, :config
 
     def self.generate(text, config)
-      bf = new(text[0], config)
-      text.split('').map(&:ord).each_with_object([bf.init_codes]) do |char, codes|
+      bytes = text.bytes.to_a
+      bf = new(bytes[0], config)
+      bytes.each_with_object([bf.init_codes]) do |char, codes|
         codes << bf.diff(char)
         codes << bf.output
       end.join
     end
 
     def initialize(char, config)
-      char_code = char.ord
+      char_code = char
       repeat = char_code / 10
       rest = char_code % 10
       @tables = []
