@@ -125,7 +125,6 @@ describe Orenono::Brain do
         loop_stack: [2],
         tape: [1, 1],
         memory_cursol: 1,
-        code_cursol: 0,
         code_cursol: 10,
         expected: [2, 10]
       }
